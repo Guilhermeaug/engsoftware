@@ -4,26 +4,31 @@ import com.example.application.model.entity.Employee;
 import com.example.application.repository.EmployeeRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.spring.security.AuthenticationContext;
+import dev.hilla.BrowserCallable;
 import dev.hilla.Endpoint;
 import dev.hilla.Nonnull;
-import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
-@Endpoint
+@BrowserCallable
 @AnonymousAllowed
-public class UserInfoService {
+public class UserInfoEndpoint {
     private final AuthenticationContext authenticationContext;
     private final EmployeeRepository employeeRepository;
 
-    @PermitAll
     @Nonnull
     public Optional<Employee> getAuthenticatedEmployee() {
         return authenticationContext
                 .getAuthenticatedUser(User.class)
-                .flatMap(value -> employeeRepository.findOneByUsername(value.getUsername()));
+                .flatMap(value -> employeeRepository.findOneByEmail(value.getUsername()));
     }
 }

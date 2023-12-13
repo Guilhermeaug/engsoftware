@@ -1,5 +1,5 @@
 {
-  "name": "no-name",
+  "name": "engsoftware",
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
@@ -18,6 +18,7 @@
     "@hilla/react-components": "2.2.3",
     "@hilla/react-crud": "2.4.0",
     "@hilla/react-form": "2.4.0",
+    "@hookform/resolvers": "^3.3.2",
     "@polymer/polymer": "3.5.1",
     "@vaadin/bundles": "24.2.3",
     "@vaadin/common-frontend": "0.0.18",
@@ -27,7 +28,9 @@
     "lit": "2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2"
+    "react-hook-form": "^7.49.0",
+    "react-router-dom": "^6.4.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@lit-labs/react": "^1.1.0",
@@ -38,6 +41,7 @@
     "@vitejs/plugin-react": "4.0.4",
     "async": "3.2.4",
     "glob": "10.3.3",
+    "prettier": "^3.1.1",
     "rollup-plugin-brotli": "3.1.0",
     "rollup-plugin-visualizer": "5.9.2",
     "strip-css-comments": "5.0.0",
@@ -74,7 +78,10 @@
     "@hilla/react-form": "$@hilla/react-form",
     "@hilla/react-auth": "$@hilla/react-auth",
     "@hilla/generator-typescript-plugin-subtypes": "$@hilla/generator-typescript-plugin-subtypes",
-    "@hilla/react-crud": "$@hilla/react-crud"
+    "@hilla/react-crud": "$@hilla/react-crud",
+    "@hookform/resolvers": "$@hookform/resolvers",
+    "react-hook-form": "$react-hook-form",
+    "zod": "$zod"
   },
   "vaadin": {
     "dependencies": {
@@ -117,6 +124,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "79e13fac89f054f4dbc22efa001cbd09d622e1ad651eedca2c7dbe2f9e6e6c13"
+    "hash": "c9f76a892b97ade37f3a2810511fee57229507b9c6f409a1d733c165d2e9dad5"
   }
 }

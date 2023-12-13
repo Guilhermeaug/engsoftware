@@ -1,51 +1,44 @@
-# Custom project from Hilla
+# Clínica Integral
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+Projeto desenvolvido utilizando o framework [Hilla](https://hilla.dev/). Se trata de um sistema
+de gerenciamento de clínicas médicas.
 
-## Running the application
+## Dependências necessárias
+* Java 17
+* Nodejs 18
+* Maven
+* Docker (para o banco de dados)
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+## Iniciando em modo desenvolvimento
+Vá para a pasta principal do projeto e execute o comando:
+```shell
+docker-compose up -d
+```
+Isso irá iniciar o banco de dados em um container docker.
+Para iniciar o projeto, execute o comando:
+```shell
+mvnw (Windows) ou ./mvnw (Mac & Linux
+```
+Isso irá iniciar o projeto em modo desenvolvimento, com hot reload. Acesse o projeto em http://localhost:8080
 
-You can also import the project to your IDE of choice as you would with any
-Maven project.
+## Iniciando em modo produção
+Um arquivo .jar está disponível na pasta producao. Para iniciar o projeto em modo produção, execute o comando:
+```shell
+java -jar producao/engsoftware-1.0-SNAPSHOT.jar
+```
 
-## Deploying to Production
+## Funcionalidades
 
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
+Possui as seguintes telas:
+* Pagina inicial
+* Galeria
+* Cadastro de Endereços
+* Agendamento de consultas
 
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
+E uma área restrita com as seguintes funcionalidades:
+* Cadastro de funcionários, prontuários médicos, pacientes, endereços e agendamentos
+* Listagem de pacientes, funcionários, endereços e agendamentos
 
-## Project structure
-
-<table style="width:100%; text-align: left;">
-  <tr><th>Directory</th><th>Description</th></tr>
-  <tr><td><code>frontend/</code></td><td>Client-side source directory</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.html</code></td><td>HTML template</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.ts</code></td><td>Frontend 
-entrypoint, bootstraps a React application</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>routes.tsx</code></td><td>React Router routes definition</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>MainLayout.tsx</code></td><td>Main 
-layout component, contains the navigation menu, uses <a href="https://hilla.dev/docs/react/components/app-layout">
-App Layout</a></td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>views/</code></td><td>UI view 
-components</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>themes/</code></td><td>Custom  
-CSS styles</td></tr>
-  <tr><td><code>src/main/java/&lt;groupId&gt;/</code></td><td>Server-side 
-source directory, contains the server-side Java views</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
-</table>
-
-## Useful links
-
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).
+Um usuário padrão é criado ao iniciar o projeto, com as seguintes credenciais:
+email: admin@integral.com
+senha: admin
